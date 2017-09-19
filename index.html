@@ -11,12 +11,45 @@
 </head>
 <body>
 
-    <div class="container text-center">
-        <label for="file-upload" class="select-area" id="select-area">
-            <i class="fa fa-picture-o"></i> Select Image
-        </label>
-        <input id="file-upload" class="input-file" type='file' onchange="loadImageFile(this);"/>
-        <img id="loadImage" src="#" class="image-display"/>
+    <div class="container text-center top-margin">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="col-md-6 margin-image">
+                    <img id="loadImage" src="#" width="400" height="270"/>
+                </div>
+                <div class="col-md-6 margin-image">
+                    <canvas id="loadCanvas" width="400" height="270"></canvas>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <label for="file-upload" class="select-area" id="select-area">
+                    <i class="fa fa-picture-o"></i> Select Image
+                </label>
+                <input id="file-upload" class="input-file" type='file' onchange="loadImageFile(this);"/>
+                <button type='button' class="btn btn-margin" onclick="Grayscale()">Grayscale</button>
+                <button type='button' class="btn btn-dark btn-margin" onclick="Darken()" value="Darken">Darken</button>
+                <button type='button' class="btn btn-light btn-margin" onclick="Bright()">Bright</button>
+
+                <div class="container-fluid">
+                    <span class="image-move-label">Move Image :</span>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type='button' class="btn btn-primary" onclick="MoveLeft()">
+                            <i class="fa fa-arrow-left"></i>
+                        </button>
+                        <button type='button' class="btn btn-primary" onclick="MoveDown()">
+                            <i class="fa fa-arrow-down"></i>
+                        </button>
+                        <button type='button' class="btn btn-primary" onclick="MoveUp()">
+                            <i class="fa fa-arrow-up"></i>
+                        </button>
+                        <button type='button' class="btn btn-primary" onclick="MoveRight()">
+                            <i class="fa fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!--REQUIRE BOOTSTRAP 4-->
@@ -25,6 +58,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <!--REQUIRE BOOTSTRAP 4-->
 
+    <script src="/functions/move.js"></script>
+    <script src="/functions/grayscale.js"></script>
+    <script src="/functions/brightness.js"></script>
     <script src="/functions/loadImage.js"></script>
 
 </body>
