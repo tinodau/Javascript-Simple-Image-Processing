@@ -11,9 +11,7 @@ input[type="file"] {
 .select-area {
     border: 1px solid #ccc;
     display: block;
-    /*padding: 15rem 30rem;*/
     padding: 1rem 2rem;
-    margin: 1rem;
     border-radius: 3px;
     cursor: pointer;
 }
@@ -38,10 +36,15 @@ input[type="file"] {
     margin: 10px;
 }
 
-.btn-margin {
+.add-margin {
     margin: 5px;
 }
 
+.no-margin {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 .image-move-label {
-    margin: 5px;;
+    margin: 5px;
 }

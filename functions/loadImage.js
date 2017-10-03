@@ -8,7 +8,7 @@ loadImageFile = (input) => {
             $('#loadImage')
                 .attr('src', e.target.result)
                 .width(400)
-                .height(300);
+                .height(250);
         };
         reader.readAsDataURL(input.files[0]);
     }

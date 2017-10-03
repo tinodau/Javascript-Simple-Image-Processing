@@ -15,11 +15,13 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="col-md-6 margin-image">
-                    <img id="loadImage" src="#" width="400" height="270"/>
+                    <img id="loadImage" src="#" width="400" height="250"/>
                 </div>
                 <div class="col-md-6 margin-image">
-                    <canvas id="loadCanvas" width="400" height="270"></canvas>
+                    <canvas id="loadCanvas" width="400" height="250"></canvas>
                 </div>
+
+                <div id='myDiv'></div>
             </div>
 
             <div class="col-md-4">
@@ -27,11 +29,25 @@
                     <i class="fa fa-picture-o"></i> Select Image
                 </label>
                 <input id="file-upload" class="input-file" type='file' onchange="loadImageFile(this);"/>
-                <button type='button' class="btn btn-margin" onclick="Grayscale()">Grayscale</button>
-                <button type='button' class="btn btn-dark btn-margin" onclick="Darken()" value="Darken">Darken</button>
-                <button type='button' class="btn btn-light btn-margin" onclick="Bright()">Bright</button>
+                <button type='button' class="btn btn-block" onclick="Grayscale()">Grayscale</button>
 
-                <div class="container-fluid">
+                <div class="col-md-12 top-margin">
+                    ( + | - )
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type='button' class="btn btn-light" onclick="Brightness('bright')">Bright</button>
+                        <button type='button' class="btn btn-dark" onclick="Brightness('darken')">Darken</button>
+                    </div>
+                </div>
+
+                <div class="col-md-12 top-margin">
+                    ( * | / )
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type='button' class="btn btn-light" onclick="Brightness2('bright')">Bright 2</button>
+                        <button type='button' class="btn btn-dark" onclick="Brightness2('darken')">Darken 2</button>
+                    </div>
+                </div>
+
+                <div class="container-fluid top-margin">
                     <span class="image-move-label">Move Image :</span>
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <button type='button' class="btn btn-primary" onclick="MoveLeft()">
@@ -48,6 +64,20 @@
                         </button>
                     </div>
                 </div>
+
+                <div class="btn-group top-margin" role="group" aria-label="Basic example">
+                    <button type='button' class="btn btn-default btn-margin" onclick="Zoom('in')">Zoom In</button>
+                    <button type='button' class="btn btn-default btn-margin" onclick="Zoom('out')">Zoom Out</button>
+                </div>
+
+
+                <div class="col-md-12 top-margin">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button", class="btn btn-default btn-margin" onclick="CropImage()">Crop</button>
+                        <button type="button", class="btn btn-default btn-margin" onclick="Warping()">Warping</button>
+                        <button type="button", class="btn btn-default btn-margin" onclick="Histogram()">Histogram</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -58,9 +88,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <!--REQUIRE BOOTSTRAP 4-->
 
+    <!-- GRAPH HISTOGRAM  -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- GRAPH HISTOGRAM  -->    
+
+    <script src="/functions/histogram.js"></script>
+    <script src="/functions/warping.js"></script>
+    <script src="/functions/crop.js"></script>
+    <script src="/functions/zoom.js"></script>
     <script src="/functions/move.js"></script>
     <script src="/functions/grayscale.js"></script>
     <script src="/functions/brightness.js"></script>
+    <script src="/functions/brightness2.js"></script>
     <script src="/functions/loadImage.js"></script>
 
 </body>
