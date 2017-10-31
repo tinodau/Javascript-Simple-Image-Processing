@@ -20,10 +20,10 @@ Warping = () => {
 
         // calculate the current offset
         let currentYOffset = (ea * x * x) + eb * x;
-    
+
         context.drawImage(image,x,0,1,image.height,x,currentYOffset,image.width,image.height);
     }
     // context.putImageData(imageData, 0, 0);
  }
- 
+
 

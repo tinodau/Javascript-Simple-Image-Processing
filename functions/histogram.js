@@ -4,10 +4,10 @@ Histogram = () => {
     let image   = document.getElementById('loadImage')
 
     function copyImageScale(img, scale){
-        var image = document.createElement("canvas");  
+        var image = document.createElement("canvas");
         image.width = Math.floor(img.width * scale);
-        image.height = Math.floor(img.height * scale); 
-        image.ctx = image.getContext("2d"); 
+        image.height = Math.floor(img.height * scale);
+        image.ctx = image.getContext("2d");
         image.ctx.drawImage(img, 0, 0,image.width,image.height);
         return image;
     }
@@ -42,7 +42,7 @@ Histogram = () => {
     }
 
     // console.log(R, G, B)
-    
+
     // DRAW RED COLOR TO PLOTLY
     let redColor = {
       x: R,
@@ -72,7 +72,7 @@ Histogram = () => {
            color: 'blue',
         },
     }
-    
+
     let data = [redColor, greenColor, blueColor];
     let layout = {barmode: "overlay"};
     Plotly.newPlot("myDiv", data, layout);

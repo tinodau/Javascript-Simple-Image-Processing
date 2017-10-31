@@ -20,7 +20,6 @@
                 <div class="col-md-6 margin-image">
                     <canvas id="loadCanvas" width="400" height="250"></canvas>
                 </div>
-
                 <div id='myDiv'></div>
             </div>
 
@@ -78,6 +77,30 @@
                         <button type="button", class="btn btn-default btn-margin" onclick="Histogram()">Histogram</button>
                     </div>
                 </div>
+
+                <div class="container-fluid top-margin">
+                    <span class="image-move-label">Noise Reduction :</span>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type='button' class="btn btn-default" onclick="noiseReduction('mean')">
+                            Mean
+                        </button>
+                        <button type='button' class="btn btn-default" onclick="noiseReduction('median')">
+                            Median
+                        </button>
+                        <button type='button' class="btn btn-default" onclick="noiseReduction('modus')">
+                            Modus
+                        </button>
+                    </div>
+                </div>
+
+                <button type='button' class="btn btn-block top-margin" onclick="
+                Filters.filterImage(
+                    Filters.convolute,
+                    [  0, -2,  0,
+                      -2,  3, -2,
+                       0, -2,  0 ]
+                  );">Convolution</button>
+
             </div>
         </div>
     </div>
@@ -90,8 +113,9 @@
 
     <!-- GRAPH HISTOGRAM  -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <!-- GRAPH HISTOGRAM  -->    
+    <!-- GRAPH HISTOGRAM  -->
 
+    <script src="/functions/noiseReduction.js"></script>
     <script src="/functions/histogram.js"></script>
     <script src="/functions/warping.js"></script>
     <script src="/functions/crop.js"></script>
@@ -100,6 +124,7 @@
     <script src="/functions/grayscale.js"></script>
     <script src="/functions/brightness.js"></script>
     <script src="/functions/brightness2.js"></script>
+    <script src="/functions/convolution.js"></script>
     <script src="/functions/loadImage.js"></script>
 
 </body>
