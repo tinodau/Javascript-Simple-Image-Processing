@@ -1,5 +1,14 @@
-// var xhttp = new XMLHttpRequest();
-//     xhttp.setRequestHeader("Content-Type", "application/json");
+// import { Grayscale } from 'grayscale'
+// import { Blur } from 'blur'
+// import { Brightness } from 'brightness'
+// import { Brightness2 } from 'brightness2'
+// import { Compression } from 'Compression'
+// import { Convolution } from 'Convolution'
+// import {} from 
+// import {} from 
+// import {} from 
+// import {} from 
+// import {} from 
 
 loadImageFile = (input) => {
     if (input.files && input.files[0]) {

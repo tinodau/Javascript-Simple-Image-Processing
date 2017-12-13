@@ -93,13 +93,62 @@
                     </div>
                 </div>
 
-                <button type='button' class="btn btn-block top-margin" onclick="
-                Filters.filterImage(
-                    Filters.convolute,
-                    [  0, -2,  0,
-                      -2,  3, -2,
-                       0, -2,  0 ]
-                  );">Convolution</button>
+                <div class="container-fluid top-margin">
+                    <!-- <span class="image-move-label">Edge Detection</span> -->
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <!-- <button type='button' class="btn btn-default" onclick="edgeDetection('tipis')">
+                            Tipis
+                        </button>
+                        <button type='button' class="btn btn-default" onclick="edgeDetection('sedang')">
+                            Sedang
+                        </button> -->
+                        <button type='button' class="btn btn-default" onclick="edgeDetection('tebal')">
+                            Edge Detection
+                        </button>
+                    </div>
+                </div>
+
+                <div class="container-fluid top-margin">
+                    <!-- <span class="image-move-label"></span> -->
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type='button' class="btn btn-default" onclick="gaussianBlur()">
+                            Gaussian Blur
+                        </button>
+                        <button type='button' class="btn btn-default" onclick="blurring()">
+                            Blur
+                        </button>
+                        <button type='button' class="btn btn-default" onclick="sharpening()">
+                            Sharpening
+                        </button>
+                    </div>
+                </div>
+
+                <div class="container-fluid top-margin">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type='button' class="btn btn-default" onclick="threshold()">
+                            Threshold
+                        </button>
+                        <button type='button' class="btn btn-default" onclick="regionGrowth()">
+                            Region Growth
+                        </button>
+                        <button type='button' class="btn btn-default" onclick="compression()">
+                            Compression
+                        </button>
+                    </div>
+                </div>
+
+                <div class="container-fluid top-margin">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type='button' class="btn btn-default" onclick="dilation()">
+                            Dilation
+                        </button>
+                        <button type='button' class="btn btn-default" onclick="erosion()">
+                            Erosion
+                        </button>
+                    </div>
+                </div>
+
+                <button type='button' class="btn btn-block top-margin" onclick="convolution()">Convolution</button>
 
             </div>
         </div>
@@ -115,6 +164,15 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <!-- GRAPH HISTOGRAM  -->
 
+    <script src="/functions/compression.js"></script>
+    <script src="/functions/erosion.js"></script>
+    <script src="/functions/dilation.js"></script>
+    <script src="/functions/regionGrowth.js"></script>
+    <script src="/functions/threshold.js"></script>
+    <script src="/functions/sharpening.js"></script>
+    <script src="/functions/edgeDetection.js"></script>
+    <script src="/functions/blur.js"></script>
+    <script src="/functions/gaussianBlur.js"></script>
     <script src="/functions/noiseReduction.js"></script>
     <script src="/functions/histogram.js"></script>
     <script src="/functions/warping.js"></script>
